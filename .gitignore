@@ -1,0 +1,8 @@
+#Untracked files
+.git
+**/.DS_Store
+target
+.vscode
+results/
+.idea
+local

@@ -1,9 +1,7 @@
 
 Feature: Test User API
 Background:
-  * def configUpdate = call read('../films-config.js')
-  * print configUpdate
-  * config = karate.merge(config, configUpdate())
+  * call read('../planets-config.js')
   * url apiURL
 
 Scenario: Get schema data

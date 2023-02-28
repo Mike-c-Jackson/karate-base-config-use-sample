@@ -1,0 +1,37 @@
+{
+    "neighborhood": [
+        {
+            "house": "mine",
+            "features": {
+                "stories": 2,
+                "bedrooms": 5,
+                "garage": {
+                    "cars": 2,
+                    "insulated": false,
+                    "oversized": false
+                }
+            }
+        },
+        {
+            "house": "yours",
+            "features": {
+                "stories": 3,
+                "bedrooms": 19
+            }
+        },
+        {
+            "house": "theirs",
+            "features": {
+                "stories": 1,
+                "bedrooms": 7,
+                "garage": {
+                    "cars": 7,
+                    "insulated": true,
+                    "oversized": {
+                        "amount":"1 car"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,11 +1,9 @@
 
 Feature: Test User API
 Background:
-  * def configUpdate = call read('../combineConfigs.js')
-  * print configUpdate
   * url apiURL
 
 Scenario: Get schema data
-  Given path apiPath
+  Given path '/api/films'
   When method GET
   Then status 200

@@ -6,7 +6,7 @@ function fn() {
     karate.log('peopleResults: ', peopleResults);
 
     var planetsConfig = {
-      apiPath: '/api/planets'
+      apiPath: '/api/planets?episode_id=5'
     };
 
     return planetsConfig;

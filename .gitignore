@@ -1,8 +1,85 @@
-#Untracked files
-.git
-**/.DS_Store
-target
-.vscode
-results/
-.idea
-local
+#A gitignore file specifies intentionally untracked files that git should ignore. Files already tracked by git are not affected; see the NOTES below for details.
+#
+#Each line in a gitignore file specifies a pattern. When deciding whether to ignore a path, git normally checks gitignore patterns from multiple sources, with the following order of precedence, from highest to lowest (within one level of precedence, the last matching pattern decides the outcome):
+# - Patterns read from the command line for those commands that support them
+# - Patterns read from a .gitignore file in the same directory as the path, or in any parent directory, with patterns in the higher level files (up to the toplevel of the work tree) being overridden by those in lower level files down to the directory containing the file. These patterns match relative to the location of the .gitignore file. A project normally includes such .gitignore files in its repository, containing patterns for files generated as part of the project build.
+# - Patterns read from $GIT_DIR/info/exclude
+# - Patterns read from the file specified by the configuration variable core.excludesfile
+#
+######################
+
+#Adding global .gitignore file
+#In order to start using this, go through these steps:
+#
+#    1)  Open Terminal
+#    2a) Run touch ~/.gitignore_global - this will create global .gitignore file in your home directory
+#      2b) Copy this file into a desired location (ie..root folder of a GIT folder for all repos)
+#    3a) Run git config --global core.excludesfile ~/.gitignore_global
+#      3b.1) Run git config --global core.excludesfile E:/git/.gitignore_global (E:/git should be replaced with location used in 2b)
+#      3b.2) Run git config --global core.excludesfile "D:/My Test Drive/git/.gitignore_global" (D:/My Test Drive/git should be replaced with location used in 2b)
+#			NOTE:  Quotes, "s, are needed if the path contains a space
+#
+#    **This will create an entry in the %USERPROFILE%\.gitconfig
+#
+#Done. Now no need to worry about creating common ignore sections for every project your start
+#
+######################
+
+# Backup files #
+################
+
+
+# Specific files #
+##################
+loadtest_execution.txt
+.DS_Store
+
+# Compiled source #
+###################
+
+
+# Compressed Packages #
+#######################
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+
+
+# Logs and databases #
+######################
+
+
+# OS generated files #
+######################
+~$*.*
+
+
+# Entire Directories #
+######################
+
+
+######################
+#PATTERN FORMATS
+#
+#   A blank line matches no files, so it can serve as a separator for readability.
+#
+#   A line starting with # serves as a comment.
+#
+#   An optional prefix ! which negates the pattern; any matching file excluded by a previous pattern will become included again. If a negated pattern matches, this will override lower precedence patterns sources.
+#
+#   If the pattern ends with a slash, it is removed for the purpose of the following description, but it would only find a match with a directory. In other words, foo/ will match a directory foo and paths underneath it, but will not match a regular file or a symbolic link foo (this is consistent with the way how pathspec works in general in git).
+#
+#   If the pattern does not contain a slash /, git treats it as a shell glob pattern and checks for a match against the pathname relative to the location of the .gitignore file (relative to the toplevel of the work tree if not from a .gitignore file).
+#
+#   Otherwise, git treats the pattern as a shell glob suitable for consumption by fnmatch(3) with the FNM_PATHNAME flag: wildcards in the pattern will not match a / in the pathname. For example, "Documentation/*.html" matches "Documentation/git.html" but not "Documentation/ppc/ppc.html" or "tools/perf/Documentation/perf.html".
+#
+#   A leading slash matches the beginning of the pathname. For example, "/*.c" matches "cat-file.c" but not "mozilla-sha1/sha1.c".
+
+#GIT CONFIG FILE LOCATIONS
+#   The system Git config file is found in the mingw32\etc folder of the Git installation.
+#   The global Git configuration file is found in the root of the user’s local profile or home directory (C:\Users\git-user\).
+#   The local Git config file is stored inside the .git directory of the repository in which you are working
+#
+#   to edit these files...
+#   $ git config --global --edit
+#   $ git config --system --edit
+#   $ git config --local --edit
